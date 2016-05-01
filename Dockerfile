@@ -3,7 +3,7 @@ MAINTAINER Daniel Tschan <tschan@puzzle.ch>
 
 RUN yum install -y golang-bin && yum clean all
 ADD . ${HOME}/gocode/src/github.com/dtschan/httpheaders
-RUN GOCODE=${HOME}/gocode && cd ${HOME}/gocode/src/github.com/dtschan/httpheaders && go install ./...
+RUN export GOPATH=${HOME}/gocode && cd ${HOME}/gocode/src/github.com/dtschan/httpheaders && go install ./...
 
 USER 1001
 
